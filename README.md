@@ -1,4 +1,4 @@
-# End of the day exercise: Task Management App 📝
+## End of the day exercise: Task Management App 📝
 
 ```js
 const initialState = {

@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   allPizzas: [
@@ -30,6 +30,8 @@ const initialState = {
         "https://img.static-rmg.be/a/food/image/q100/w480/h360/1087722/pizza-bianca-met-artisjok-en-mortadella.jpg",
     },
   ],
+  posts: [],
+  postDetails: null,
 };
 
 export const pizzaSlice = createSlice({
@@ -39,12 +41,20 @@ export const pizzaSlice = createSlice({
     addPizza: (state, action) => {
       // console.log("action", action.payload)
       // console.log("state", current(state))
-      const newPizza = { ...action.payload, id: state.allPizzas.length + 1}
-      state.allPizzas.push(newPizza)
-    }
+      const newPizza = { ...action.payload, id: state.allPizzas.length + 1 };
+      state.allPizzas.push(newPizza);
+    },
+    setPosts: (state, action) => {
+      // action.payload === [{}, {}, {}]
+      state.posts = action.payload;
+    },
+    setOnePost: (state, action) => {
+      state.postDetails = action.payload;
+    },
   },
 });
 
-export const { addPizza } = pizzaSlice.actions;
+export const { addPizza, clearPizza, setPosts, setOnePost } =
+  pizzaSlice.actions;
 
 export default pizzaSlice.reducer;

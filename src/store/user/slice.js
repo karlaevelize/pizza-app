@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   name: "Helva",
+  token: null,
+  profile: null,
   id: 42,
   favorites: [1, 2]
 };
@@ -22,11 +24,17 @@ export const userSlice = createSlice({
       // console.log("new array", newFavoritesArray)
       //update the state
       state.favorites = newFavoritesArray
+    },
+    userLogin: (state, action) => {
+      console.log("action", action)
+      // const { token, profile } = action.payload
+      state.token = action.payload.token
+      state.profile = action.payload.profile
 
     }
   },
 });
 
-export const { toggleFavorite } = userSlice.actions;
+export const { toggleFavorite, userLogin } = userSlice.actions;
 
 export default userSlice.reducer;

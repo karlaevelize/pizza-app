@@ -8,6 +8,12 @@ const Login = () => {
   //2. Check if I'm getting a token back
   //3. Write a case in the reducer
 
+
+  //Redirect the user to homepage once logged in -> useNavigate
+  //1. If (token) {navigate("/")}
+
+  //Say welcome to the user
+
   const dispatch = useDispatch()
 
   const [ email, setEmail ] = useState("kelley@codaisseur.com")

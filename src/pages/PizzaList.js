@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import AddPizzaForm from "./AddPizzaForm";
+import AddPizzaForm from "../components/AddPizzaForm";
 import { selectPizzas, selectPizzaById } from "../store/pizzas/selectors";
 import { selectUser } from "../store/user/selectors";
 import { toggleFavorite } from "../store/user/slice";
